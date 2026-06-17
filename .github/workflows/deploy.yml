@@ -3,7 +3,7 @@ name: Deploy Sanity Studio Otomatis
 on:
   push:
     branches:
-      - main # Atau nama branch utama lu, misal master
+      - main # Sesuaikan kalau nama branch lu master
 
 jobs:
   deploy:
@@ -12,11 +12,10 @@ jobs:
       - name: Ambil Kode dari Repo
         uses: actions/checkout@v4
 
-      - name: Install NodeJS
+      - name: Install NodeJS Versi Terbaru
         uses: actions/setup-node@v4
         with:
-          node-node-version: 20
-          cache: 'npm'
+          node-version: 22 # Menggunakan Node 22 yang aman dan didukung penuh
 
       - name: Install Dependencies
         run: npm install
