@@ -1,0 +1,27 @@
+name: Deploy Sanity Studio Otomatis
+
+on:
+  push:
+    branches:
+      - main # Atau nama branch utama lu, misal master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ambil Kode dari Repo
+        uses: actions/checkout@v4
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Jalankan Deploy ke Sanity Cloud
+        run: npx sanity deploy --yes
+        env:
+          SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}
