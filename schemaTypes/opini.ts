@@ -54,12 +54,11 @@ export default defineType({
       type: 'text',
       rows: 3,
     }),
-    // DI SINI YANG GUA UBAH BIAR BISA TEBAL/MIRING:
     defineField({
       name: 'isiLengkap',
       title: 'Isi Lengkap Tulisan',
       type: 'array',
-      of: [{ type: 'block' }] // Mengubah teks biasa jadi Rich Text editor bawaan Sanity
+      of: [{ type: 'block' }] // Ini dia yang bikin tebal/miring aktif!
     }),
     defineField({
       name: 'aktif',
