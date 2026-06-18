@@ -1,7 +1,8 @@
 import {defineField, defineType} from 'sanity'
 import opini from './opini'
 
-// 1. SKEMA MEDIA (Biar rapi tetep gua taruh di sini dulu)                                           const mediaSchema = defineType({
+// 1. SKEMA MEDIA (Biar rapi tetep gua taruh di sini dulu)
+const mediaSchema = defineType({
   name: 'media',
   title: 'Media',
   type: 'document',
