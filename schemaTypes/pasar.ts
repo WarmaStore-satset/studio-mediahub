@@ -1,15 +1,16 @@
-export default {
+import { defineType, defineField } from 'sanity'
+
+export default defineType({
   name: 'pasar',
   title: 'Pasar MediaHub',
   type: 'document',
   fields: [
-    {
+    defineField({
       name: 'judul',
       title: 'Nama Produk / Jasa',
       type: 'string',
-      validation: Rule => Rule.required().min(5).error('Nama produk minimal 5 karakter, Bree!')
-    },
-    {
+    }),
+    defineField({
       name: 'jenisPasar',
       title: 'Jenis Pasar / Kategori',
       type: 'string',
@@ -18,38 +19,34 @@ export default {
           { title: 'Pasar Warga (Lapak Umum & Kreatif)', value: 'warga' },
           { title: 'Pasar Mediahub (Rekomendasi Admin/Affiliate)', value: 'mediahub' }
         ],
-        layout: 'radio' // Bikin tampilan radio button biar tinggal klik di admin panel
+        layout: 'radio'
       },
-      validation: Rule => Rule.required()
-    },
-    {
+    }),
+    defineField({
       name: 'harga',
       title: 'Harga Produk',
       type: 'string',
       description: 'Contoh: Rp15.000, Rp50.000/jam, atau Gratis',
-      validation: Rule => Rule.required()
-    },
-    {
+    }),
+    defineField({
       name: 'gambar',
       title: 'Foto Produk',
       type: 'image',
       options: {
-        hotspot: true // Biar bisa di-crop otomatis pas di-upload
+        hotspot: true
       },
-      validation: Rule => Rule.required()
-    },
-    {
+    }),
+    defineField({
       name: 'tautanLink',
       title: 'Link Tujuan (WhatsApp / Affiliate)',
       type: 'url',
       description: 'Untuk Pasar Warga masukkan link wa.me/nomorhp. Untuk Pasar Mediahub masukkan link produk.',
-      validation: Rule => Rule.required()
-    },
-    {
+    }),
+    defineField({
       name: 'aktif',
       title: 'Tampilkan di Website?',
       type: 'boolean',
-      initialValue: true
-    }
-  ]
-}
+      initialValue: true,
+    }),
+  ],
+})
