@@ -1,5 +1,6 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity'
 import opini from './opini'
+import pasar from './pasar' // <-- 1. IMPORT FILE PASAR.TS DI SINI, COK!
 
 // 1. SKEMA MEDIA (Biar rapi tetep gua taruh di sini dulu)
 const mediaSchema = defineType({
@@ -36,5 +37,5 @@ const mediaSchema = defineType({
   ],
 })
 
-// Gabungkan skema media lokal dengan skema opini dari file sebelah
-export const schemaTypes = [mediaSchema, opini]
+// 2. GABUNGKAN SEMUA SKEMA (media, opini, dan pasar) DI SINI!
+export const schemaTypes = [mediaSchema, opini, pasar]
