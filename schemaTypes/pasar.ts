@@ -29,6 +29,12 @@ export default defineType({
       description: 'Contoh: Rp15.000, Rp50.000/jam, atau Gratis',
     }),
     defineField({
+  name: 'deskripsi',
+  title: 'Deskripsi Produk / Jasa',
+  type: 'text', // Pakai 'text' biar inputnya bisa panjang berbaris-baris
+  description: 'Jelaskan detail produk, ukuran, varian, atau ketentuan jasa lu, Bree.',
+}),
+    defineField({
       name: 'gambar',
       title: 'Foto Produk',
       type: 'image',
